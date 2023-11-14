@@ -45,7 +45,7 @@
      <h1 style="text-center; font-size:70px; font-weight:400; line-height:90px; font-family: DaulphinPlain;">Lorem Ipsum</h1>
      </center>
      <h2 style="margin: 10px 10px 5px 10px; font-size: 14px; line-height: 18px; text-align: center; font-style: italic;">
-     "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</h2> 
+     "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet amit, consectetur, adipisci velit..."</h2> 
      <h2 style="margin: 5px 10px 20px 10px; font-size: 12px; line-height: 14px; text-align: center; font-family: Open Sans">
      "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</h2>
      <hr>
