@@ -38,13 +38,38 @@
         </div>
       </div>
     </nav>
+    <div class="container">
+    <center>
+    <h1 style="text-center; font-size:70px; font-weight:400; line-height:90px; 
+    font-family: DaulphinPlain;">Halaman Mahasiswa</h1>
+    </center>
+    <table class="table table-danger table-sm table-hover table-striped table-bordered text-center">
+      <thead>
+        <tr>
+          <td>NPM</td>
+          <td>Nama Mahasiswa</td>
+          <td>Jenis Kelamin</td>
+          <td colspan="2">TTL</td>
+        </tr>
+      </thead>
+        <tbody>
+          <?php $nilai_awal = 0; ?>
+          @while ($nilai_awal < $jumlah)
+
+          <tr>
+            <td>{{ $npm[$nilai_awal] }}</td>
+            <td>{{ $nama[$nilai_awal] }}</td>
+            <td>Laki-laki</td>
+            <td>21-09-2000</td>
+            <td>Kota Medan</td>
+          </tr>
+          <?php $nilai_awal++ ?>
+          @endwhile
+        </tbody>    
+    </table>
+    
   </header>
    <main> 
-     <div class="container">
-     <center>
-     <h1 style="text-center; font-size:70px; font-weight:400; line-height:90px; 
-     font-family: DaulphinPlain;">Halaman Mahasiswa</h1>
-     </center>
  </main>
  <footer class="container bg-light">
   <div class="row">
