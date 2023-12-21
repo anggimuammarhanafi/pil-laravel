@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\mahasiswaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('index');
 });
@@ -32,8 +33,8 @@ Route::get('/about', function () {
 
 Route::get('/table', function () {
     return view('table');
-});
+});*/
 
-
+Route::get('mahasiswa',[mahasiswaController::class,'index']);
 
 
