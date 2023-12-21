@@ -35,6 +35,6 @@ Route::get('/table', function () {
     return view('table');
 });*/
 
-Route::get('mahasiswa',[mahasiswaController::class,'index']);
+Route::resource('mahasiswa',mahasiswaController::class);
 
 

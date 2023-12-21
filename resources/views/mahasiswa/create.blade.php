@@ -40,25 +40,11 @@
     </nav>
     <div class="container">
     <center>
-    <h1 style="text-center; font-size:70px; font-weight:400; line-height:90px; 
-    font-family: DaulphinPlain;">Halaman Mahasiswa</h1>
+    <h1 style="text-center; font-size:50px; font-weight:400; line-height:90px; 
+    font-family: DaulphinPlain;">Ini Adalah Halaman Tambah Mahasiswa</h1>
     </center>
-    <div class = row>
-    <table class="table table-danger table-sm table-hover table-striped table-bordered text-center">
-      <thead>
-        <tr>
-          <td>NPM</td>
-          <td>Nama Mahasiswa</td>
-          <td>Jenis Kelamin</td>
-          <td colspan="2">TTL</td>
-        </tr>
-      </thead>
-        <tbody>
-           
-        </tbody>    
-    </table>
-  </div>
-    <div class ="col-sm-6">
+    
+    <div class ="col-sm-12">
       <h4>Form Mahasiswa </h4>
       <form action="" method="GET">
         <div class = "row">
@@ -86,8 +72,11 @@
           </div>
         </div>
         <div class = "row mt-2">
-          <div class = "col-sm-12">
+          <div class = "col-sm-6">
             <button class = "btn btn-primary" style="width: 100%" type="submit">Simpan</button>
+          </div>
+          <div class="col-sm-6">
+            <a href="/mahasiswa" class="btn btn-secondary" style="width:100%">Kembali</a>
           </div>
         </div>
 
