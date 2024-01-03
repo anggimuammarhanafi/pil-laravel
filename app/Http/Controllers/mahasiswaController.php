@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\mahasiswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class mahasiswaController extends Controller
 {
@@ -11,7 +13,7 @@ class mahasiswaController extends Controller
      */
     public function index()
     {
-        return view('mahasiswa/mahasiswa');
+        return view('mahasiswa.index');
     }
 
     /**
@@ -19,7 +21,7 @@ class mahasiswaController extends Controller
      */
     public function create()
     {
-        return view('mahasiswa/create');
+        return view('mahasiswa.create');
     }
 
     /**
@@ -27,7 +29,38 @@ class mahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Session::flash('npm', $request->npm);
+        Session::flash('nama_mahasiswa', $request->nama_mahasiswa);
+        Session::flash('tgl_lahir', $request->tgl_lahir);
+        Session::flash('alamat', $request->alamat);
+
+        $request->validate([
+            'npm' => 'required|numeric|unique:mahasiswa,npm',
+            'nama_mahasiswa' => 'required',
+            'jk' => 'required',
+            'tgl_lahir' => 'required',
+            'alamat' => 'required'
+        ],
+        [
+            'npm.required' => 'NPM TIDAK BOLEH KOSONG!',
+            'npm.numeric' => 'NPM HARUS DIISI DALAM BENTUK ANGKA',
+            'npm.unique' => 'NPM SUDAH ADA SEBELUMNYA',
+            'nama_mahasiswa.required' => 'NAMA MAHASISWA TIDAK BOLEH KOSONG!',
+            'jk.required' => 'JENIS KELAMIN TIDAK BOLEH KOSONG!',
+            'tgl_lahir.required' => 'TANGGAL LAHIR TIDAK BOLEH KOSONG!',
+            'alamat.required' => 'ALAMAT TIDAK BOLEH KOSONG!'  
+        ]
+    );
+
+        $data = [
+            'npm' => $request->npm,
+            'nama_mahasiswa' => $request->nama_mahasiswa,
+            'jk' => $request->jk,
+            'tgl_lahir' => $request->tgl_lahir,
+            'alamat' => $request->alamat
+        ];
+        mahasiswa::create($data);
+        return redirect('/mahasiswa')->with('success', 'Data Berhasil Ditambahkan');
     }
 
     /**

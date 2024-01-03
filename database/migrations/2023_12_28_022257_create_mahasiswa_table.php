@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('mahasiswa', function (Blueprint $table) {
             $table->id();
             $table->integer('npm')->unique();
-            $table->string('nama', 35)->nullable();
+            $table->string('nama_mahasiswa', 35)->nullable();
             $table->enum('jk',['l','p']);
             $table->date('tgl_lahir')->nullable();
             $table->text('alamat');
