@@ -55,11 +55,6 @@
     <div class="row">
       <div class="col-sm-12">
         @if (Session::has('success'))
-            {{-- <div class="pt-3">
-              <div class="alert alert-success">
-                {{ Session::get('success')}}
-              </div>
-            </div> --}}
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
               <strong>Selamat!</strong> {{ Session::get('success')}}
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -72,14 +67,26 @@
     <table class="table table-danger table-sm table-hover table-striped table-bordered text-center">
       <thead>
         <tr>
+          <td>NO</td>
           <td>NPM</td>
           <td>Nama Mahasiswa</td>
           <td>Jenis Kelamin</td>
-          <td colspan="2">TTL</td>
+          <td>Tanggal Lahir</td>
+          <td>Alamat</td>
         </tr>
       </thead>
         <tbody>
-           
+          <?php $no=1; ?>
+           @foreach ($mahasiswa as $m)
+               <tr>
+                <td>{{ $no++}}
+                <td>{{ $m->npm}}</td>
+                <td>{{ $m->nama_mahasiswa}}</td>
+                <td>{{ $m->jk}}</td>
+                <td>{{ $m->tgl_lahir}}</td>
+                <td>{{ $m->alamat}}</td>
+                </tr>
+           @endforeach
         </tbody>    
     </table>
   </div>
